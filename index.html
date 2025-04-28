@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Post Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Facebook Post Generator</h1>
+        </header>
+        
+        <main>
+            <div class="card">
+                <form id="post-form">
+                    <div class="form-group">
+                        <label for="framework">Copywriting Framework</label>
+                        <select id="framework" required>
+                            <option value="AIDA">AIDA</option>
+                            <option value="PASTOR">PASTOR</option>
+                            <option value="QUEST">QUEST</option>
+                            <option value="4U's">4U's</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="language">Language</label>
+                        <select id="language" required>
+                            <option value="English">English</option>
+                            <option value="Bahasa Malaysia">Bahasa Malaysia</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="ai-model">AI Model</label>
+                        <select id="ai-model" required>
+                            <option value="google/gemini-2.0-flash-exp:free">Google Gemini 2.0 Flash</option>
+                            <option value="google/learnlm-1.5-pro-experimental:free">Google LearnLM 1.5 Pro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="topic">Topic or Product Name</label>
+                        <input type="text" id="topic" placeholder="e.g. Fitness Tracker Watch" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pain-point">Key Benefit or Pain Point</label>
+                        <textarea id="pain-point" placeholder="e.g. Helps busy professionals track their health goals without complicated setup" required></textarea>
+                    </div>
+                    
+                    <button type="submit" id="generate-btn">Generate Post</button>
+                </form>
+                
+                <div id="result-container" class="hidden">
+                    <h2>Generated Facebook Post</h2>
+                    <div id="spinner" class="hidden">
+                        <div class="loading-spinner"></div>
+                        <p>Generating your post...</p>
+                    </div>
+                    <div id="result"></div>
+                    <button id="copy-btn">Copy to Clipboard</button>
+                    <button id="new-post-btn">Create New Post</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <div id="api-key-modal" class="modal">
+        <div class="modal-content">
+            <h2>Welcome to Facebook Post Generator</h2>
+            <p>Please enter your OpenRouter API key to continue:</p>
+            <input type="text" id="api-key-input" placeholder="Enter your OpenRouter API key">
+            <button id="save-api-key">Save API Key</button>
+            <p class="note">Your API key will be stored locally on your device.</p>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html> 
